@@ -4,19 +4,42 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Chips {
+public class Chips implements  ItemPrice {
     static Scanner reader = new Scanner(System.in);
+
+    private double chipsPrice;
+    private String chipsFlavor;
+
+    public Chips(String chipsFlavor, double chipsPrice){
+        this.chipsFlavor = chipsFlavor;
+        this.chipsPrice = chipsPrice;
+    }
+
     public static void addChips(){
         System.out.println("Would you like to add a bag of chips? (yes/no)");
-
         String response = reader.nextLine();
-        if(response.equalsIgnoreCase("yes")){
-            System.out.println("");
-        } else if (response.equalsIgnoreCase("no")){
 
+        if(response.equalsIgnoreCase("yes")){
+            System.out.println("What flavor would you like: bbq, salted, or salt and vinegar?");
+            String flavor = reader.nextLine();
+            Chips chip = new Chips(flavor, 1.50);
+            System.out.println(chip.toString());
+
+        } else if (response.equalsIgnoreCase("no")){
+            System.out.println("You've selected no chips.");
         } else {
             System.out.println("That's an incorrect selection, please try again.");
         }
     }
 
+    @Override
+    public String toString() {
+        return "✮☆★✮☆★✮☆★✮☆★✮☆★✮☆★✮☆★✮☆★✮☆★✮☆★✮☆★✮☆★✮☆★✮☆★✮☆★✮☆★✮☆★✮☆★✮☆★✮☆★✮☆★"
+                + "\nChips: " + chipsFlavor + ", Price: $" + chipsPrice;
+    }
+
+    @Override
+    public double getPrice() {
+        return chipsPrice;
+    }
 }
