@@ -15,14 +15,13 @@ public class Drinks implements ItemPrice {
         this.drinkFlavor = drinkFlavor;
     }
 
-
     public static void addDrinks(){
-        System.out.println("Would you like to a drink? (yes/no)");
-        String response = reader.nextLine();
+        System.out.println("Would you like a drink? (yes/no)");
+        String response = reader.nextLine().trim();
 
         if(response.equalsIgnoreCase("yes")){
             System.out.println("What size drink would you like: small, medium, or large?");
-            String size = reader.nextLine().toLowerCase();
+            String size = reader.nextLine().toLowerCase().trim();
             double price = 0;
             switch(size){
                 case "small" -> price = 2.00;
@@ -30,9 +29,14 @@ public class Drinks implements ItemPrice {
                 case "large" -> price = 3.00;
                 default -> System.out.println("That's an incorrect size.Please try again.");
             }
+
             System.out.println("Would you like iced tea, lemonade, or soda?");
-            String flavor = reader.nextLine();
+            String flavor = reader.nextLine().trim();
             Drinks drink = new Drinks(size, price, flavor);
+
+            Checkout checkout = new Checkout();
+            checkout.addDrink(drink);
+
             System.out.println(drink.toString());
 
         } else if (response.equalsIgnoreCase("no")){
@@ -40,12 +44,12 @@ public class Drinks implements ItemPrice {
         } else {
             System.out.println("That's an incorrect selection, please try again.");
         }
-
     }
 
     @Override
     public String toString() {
-        return "Drink: " + drinkSize + " " + drinkFlavor + ", Price: $" + drinkPrice;
+        return "Drink: " + drinkSize + " " + drinkFlavor +
+                "\nPrice....................$" + drinkPrice;
     }
     @Override
     public double getPrice() {

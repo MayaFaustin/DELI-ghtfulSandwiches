@@ -4,15 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Sandwich {
+public class Sandwich implements ItemPrice{
     static Scanner reader = new Scanner(System.in);
 
-    private static double basePrice;
+    private double basePrice;
     private double extraMeatPrice;
     private double extraCheesePrice;
     double cheesePrice = 0;
     double meatPrice = 0;
-    private double price;
     private String breadType;
     private String sandwichSize;
     List<String>toppings;
@@ -23,12 +22,6 @@ public class Sandwich {
     private String sauces;
     private String sides;
 
-    public double getPrice() {
-        return price;
-    }
-    public void setPrice(double price) {
-        this.price = price;
-    }
 
     public Sandwich(String _breadType, String _sandwichSize,List<String> toppings, boolean _isToasted) {
             this.breadType = _breadType;
@@ -52,18 +45,17 @@ public class Sandwich {
         sandwich.selectSides();
         sandwich.toasted();
 
-        double totalSandwichPrice = basePrice + sandwich.meatPrice + sandwich.extraMeatPrice + sandwich.cheesePrice + sandwich.extraCheesePrice;
-        sandwich.setPrice(totalSandwichPrice);
+        Checkout checkout = new Checkout();
+        checkout.addSandwich(sandwich);
 
-        System.out.println(sandwich.toString());
-        System.out.println("Price: $" + totalSandwichPrice);
+        System.out.println(sandwich);
 
 
     }
 
     public String selectBread(){
         System.out.println("Let's get your sandwich started. What type of bread would you like: white, wheat, rye, or wrap? Type your response here: ");
-        String breadSelection = reader.nextLine().toLowerCase();
+        String breadSelection = reader.nextLine().toLowerCase().trim();
         switch(breadSelection) {
             case "white", "wheat", "rye", "wrap" -> {
                 this.breadType = breadSelection;
@@ -78,17 +70,17 @@ public class Sandwich {
 
     public String selectSandwichSize() {
         System.out.println("What size sandwich would you like: 4 inches, 8 inches, or 12 inches?");
-        String sandwichSizeSelection = reader.nextLine();
+        String sandwichSizeSelection = reader.nextLine().trim();
         this.sandwichSize = sandwichSizeSelection;
         switch (sandwichSizeSelection) {
             case "4 inches" -> {
-                basePrice = 5.50;
+                this.basePrice = 5.50;
             }
             case "8 inches" -> {
-                basePrice = 7.00;
+                this.basePrice = 7.00;
             }
             case "12 inches" -> {
-                basePrice = 8.50;
+                this.basePrice = 8.50;
             }
             default -> {
                 System.out.println("That's not a valid selection. Please try again.");
@@ -100,25 +92,21 @@ public class Sandwich {
 
     public String selectMeat(){ // size dependent prices: 1, 2, 3
         System.out.println("What meat would you like to add: \nsteak, ham, salami, roast beef, chicken or bacon");
-        meat = reader.nextLine().toLowerCase();
+        meat = reader.nextLine().toLowerCase().trim();
         toppings.add(meat);
-        if(this.sandwichSize == "4 inches") {
-            meatPrice = 1.0;
-        } else if(this.sandwichSize == "8 inches"){
-            meatPrice = 2.0;
-        } else if(this.sandwichSize == "12 inches"){
-            meatPrice = 3.0;
+        switch (this.sandwichSize) {
+            case "4 inches" -> this.meatPrice = 1.0;
+            case "8 inches" -> this.meatPrice = 2.0;
+            case "12 inches" -> this.meatPrice = 3.0;
         }
 
         System.out.println("Would you like to add extra meat? (yes/no)");
-        String extraMeat = reader.nextLine().toLowerCase();
+        String extraMeat = reader.nextLine().toLowerCase().trim();
         if (extraMeat.equals("yes")){
-            if(this.sandwichSize == "4 inches") {
-                extraMeatPrice = 0.75;
-            } else if(this.sandwichSize == "8 inches"){
-                extraMeatPrice = 1.50;
-            } else if(this.sandwichSize == "12 inches"){
-                extraMeatPrice = 2.25;
+            switch (this.sandwichSize) {
+                case "4 inches" -> this.extraMeatPrice = 0.75;
+                case "8 inches" -> this.extraMeatPrice = 1.50;
+                case "12 inches" -> this.extraMeatPrice = 2.25;
             }
         }
         return extraMeat;
@@ -126,24 +114,20 @@ public class Sandwich {
 
     public String selectCheese(){
         System.out.println("What cheese would you like to add: \namerican, provolone, cheddar, or swiss");
-        cheese = reader.nextLine().toLowerCase();
+        cheese = reader.nextLine().toLowerCase().trim();
         toppings.add(cheese);
-        if(this.sandwichSize == "4 inches") {
-            cheesePrice = 0.75;
-        } else if(this.sandwichSize == "8 inches"){
-            cheesePrice = 1.5;
-        } else if(this.sandwichSize == "12 inches"){
-            cheesePrice = 2.25;
+        switch (this.sandwichSize) {
+            case "4 inches" -> this.cheesePrice = 0.75;
+            case "8 inches" -> this.cheesePrice = 1.5;
+            case "12 inches" -> this.cheesePrice = 2.25;
         }
         System.out.println("Would you like to add extra cheese? (yes/no)");
-        String extraCheese = reader.nextLine().toLowerCase();
+        String extraCheese = reader.nextLine().toLowerCase().trim();
         if (extraCheese.equals("yes")){
-            if(this.sandwichSize == "4 inches") {
-               extraCheesePrice = 0.30;
-            } else if(this.sandwichSize == "8 inches"){
-                extraCheesePrice = 0.60;
-            } else if(this.sandwichSize == "12 inches"){
-                extraCheesePrice = 0.90;
+            switch (this.sandwichSize) {
+                case "4 inches" -> this.extraCheesePrice = 0.30;
+                case "8 inches" -> this.extraCheesePrice = 0.60;
+                case "12 inches" -> this.extraCheesePrice = 0.90;
             }
         }
         return extraCheese;
@@ -152,28 +136,28 @@ public class Sandwich {
     public String selectRegularToppings()
     {
         System.out.println("What vegetables would you like to add: \nlettuce, peppers, onions, tomatoes, jalepeños, cucumbers, pickles, guacamole, or mushrooms");
-        regularToppings = reader.nextLine();
+        regularToppings = reader.nextLine().trim();
         toppings.add(regularToppings);
         return regularToppings;
     }
 
     public String selectSauces(){
         System.out.println("What sauces would you like to add: \nmayo, mustard, ketchup, ranch, thousand islands, or vinaigrette ");
-        sauces = reader.nextLine();
+        sauces = reader.nextLine().trim();
         toppings.add(sauces);
         return sauces;
     }
 
     public String selectSides(){
         System.out.println("What sides would you like to add: \nau jus or sauce");
-        sides = reader.nextLine();
+        sides = reader.nextLine().trim();
         toppings.add(sides);
         return sides;
     }
 
     public void toasted(){
         System.out.println("Would you like your sandwich toasted? (yes/no)");
-        String toastedResponse = reader.next();
+        String toastedResponse = reader.next().trim();
         if (toastedResponse.equalsIgnoreCase("yes")){
             this.isToasted = true;
         } else if(toastedResponse.equalsIgnoreCase("no")){
@@ -185,15 +169,20 @@ public class Sandwich {
     }
 
     public String toString() {
-        return "✮☆★✮☆★✮☆★✮☆★✮☆★✮☆★✮☆★✮☆★✮☆★✮☆★✮☆★✮☆★✮☆★✮☆★✮☆★✮☆★✮☆★✮☆★✮☆★✮☆★✮☆★"
-                + "\nBread: " + breadType +
+        return  "Bread: " + breadType +
                 "\nSandwich size: " + sandwichSize +
                 "\nMeat: " + meat +
                 "\nCheese: " + cheese +
                 "\nVegetables: " + regularToppings +
                 "\nSauce: " + sauces +
                 "\nSides: " + sides +
-                "\nToasted: " + isToasted;
+                "\nToasted: " + isToasted +
+                "\nPrice....................$" + getPrice();
+    }
+
+    @Override
+    public double getPrice() {
+        return basePrice + meatPrice + extraMeatPrice + cheesePrice + extraCheesePrice;
     }
 }
 
