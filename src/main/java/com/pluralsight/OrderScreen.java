@@ -21,7 +21,7 @@ public class OrderScreen {
                     
                      (4) Checkout\
                     
-                     (0) Exit\
+                     (0) Home\
                     
                      ✮☆★✮☆★✮☆★✮☆★✮☆★✮☆★✮☆★✮☆★✮☆★✮☆★✮☆★✮☆★✮☆★✮☆★✮☆★✮☆★✮☆★✮☆★✮☆★✮☆★✮☆★""");
             orderScreenSelection = reader.nextInt();
@@ -29,7 +29,7 @@ public class OrderScreen {
                 case 1 -> Sandwich.addSandwich();
                 case 2 -> Drinks.addDrinks();
                 case 3 -> Chips.addChips();
-                case 4 -> System.out.println("temporary checkout");
+                case 4 -> Checkout.checkOutOrder();
                 case 0 -> System.out.println("Have a DELI-ghtful day ദ്ദി(˵•̀ ᴗ -˵) ✧");
                 default -> System.out.println("That is not a valid selection (ᵕ—ᴗ—) Please try again.");
             }
