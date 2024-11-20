@@ -1,0 +1,19 @@
+-✮--★--☆---Sandwiches---☆--★--✮-
+Bread: white
+Sandwich size: 8 inches
+Meat: bacon
+Cheese: provolone
+Vegetables: lettuce, tomatoes, onions
+Sauce: mayo, ketchup
+Sides: sauce
+Toasted: true
+Price....................$12.0
+-✮--★--☆---Drinks---☆--★--✮-
+Drink: medium lemonade
+Price....................$2.5
+-✮--★--☆---Chips---☆--★--✮-
+Chips: bbq
+Price....................$1.5Chips: sea salt
+Price....................$1.5
+-✮--★--☆-Order Total-☆--★--✮-
+Your total today was $17.5

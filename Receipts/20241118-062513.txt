@@ -1,0 +1,18 @@
+-✮--★--☆---Sandwiches---☆--★--✮-
+Bread: rye
+Sandwich size: 4 inches
+Meat: ham
+Cheese: swiss
+Vegetables: onions
+Sauce: mato
+Sides: au jes
+Toasted: true
+Price....................$8.3
+-✮--★--☆---Drinks---☆--★--✮-
+Drink: small soda
+Price....................$2.0
+-✮--★--☆---Chips---☆--★--✮-
+Chips: bbq
+Price....................$1.5
+-✮--★--☆-Order Total-☆--★--✮-
+Your total today was $11.80

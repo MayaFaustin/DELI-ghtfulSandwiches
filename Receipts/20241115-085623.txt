@@ -1,0 +1,18 @@
+-✮--★--☆---Sandwiches---☆--★--✮-
+Bread: wrap
+Sandwich size: 8 inches
+Meat: steak, salami
+Cheese: american
+Vegetables: peppers, onions
+Sauce: mayo
+Sides: au jus
+Toasted: true
+Price....................$12.6
+-✮--★--☆---Drinks---☆--★--✮-
+Drink: medium iced tea
+Price....................$2.5
+-✮--★--☆---Chips---☆--★--✮-
+Chips: salt and vinegar
+Price....................$1.5
+-✮--★--☆-Order Total-☆--★--✮-
+Your total today was $16.6

@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 public class HomeScreen {
     static Scanner reader = new Scanner(System.in);
+
     public static void showHomeScreen(){
         int homeScreenSelection;
         // another do while loop, will run unless 0 is selected
@@ -11,7 +12,7 @@ public class HomeScreen {
                     "\nThank you for choosing DELI-ghtufl Sandwiches! Please select one of the following: " +
                     "\n1. Start a new order" +
                     "\n0. Exit" +
-                    "\n ✮☆★✮☆★✮☆★✮☆★✮☆★✮☆★✮☆★✮☆★✮☆★✮☆★✮☆★✮☆★✮☆★✮☆★✮☆★✮☆★✮☆★✮☆★✮☆★✮☆★✮☆★");
+                    "\n✮☆★✮☆★✮☆★✮☆★✮☆★✮☆★✮☆★✮☆★✮☆★✮☆★✮☆★✮☆★✮☆★✮☆★✮☆★✮☆★✮☆★✮☆★✮☆★✮☆★✮☆★");
             homeScreenSelection = reader.nextInt();
             switch (homeScreenSelection) {
                 case 1 -> OrderScreen.showOrderScreen();

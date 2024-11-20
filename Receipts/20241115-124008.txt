@@ -1,0 +1,18 @@
+-✮--★--☆---Sandwiches---☆--★--✮-
+Bread: wheat
+Sandwich size: 4 inches
+Meat: bacon
+Cheese: swiss
+Vegetables: lettuce, tomatoes
+Sauce: mayo, ketchup
+Sides: au jus
+Toasted: true
+Price....................$8.0
+-✮--★--☆---Drinks---☆--★--✮-
+Drink: small soda
+Price....................$2.0
+-✮--★--☆---Chips---☆--★--✮-
+Chips: bbq
+Price....................$1.5
+-✮--★--☆-Order Total-☆--★--✮-
+Your total today was $11.5

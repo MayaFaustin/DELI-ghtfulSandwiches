@@ -1,0 +1,17 @@
+-✮--★--☆---Sandwiches---☆--★--✮-
+Bread: wheat
+Sandwich size: 8 inches
+Meat: roast beef
+Cheese: cheddar
+Vegetables: onions, tomatoes, mushrooms
+Sauce: mayo
+Sides: sauce
+Toasted: true
+Price....................$10.5
+-✮--★--☆---Drinks---☆--★--✮-
+Drink: small soda
+Price....................$2.0
+-✮--★--☆---Chips---☆--★--✮-
+
+-✮--★--☆-Order Total-☆--★--✮-
+Your total today was $12.5

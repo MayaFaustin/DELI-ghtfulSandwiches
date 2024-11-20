@@ -1,0 +1,18 @@
+-✮--★--☆---Sandwiches---☆--★--✮-
+Bread: wheat
+Sandwich size: 4 inches
+Meat: ham
+Cheese: american
+Vegetables: lettuce
+Sauce: mayo
+Sides: au jus
+Toasted: false
+Price....................$7.25
+-✮--★--☆---Drinks---☆--★--✮-
+Drink: small iced tea
+Price....................$2.0
+-✮--★--☆---Chips---☆--★--✮-
+Chips: bbq
+Price....................$1.5
+-✮--★--☆-Order Total-☆--★--✮-
+Your total today was $10.75

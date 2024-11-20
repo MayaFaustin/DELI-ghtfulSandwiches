@@ -1,0 +1,35 @@
+-✮--★--☆---Sandwiches---☆--★--✮-
+Bread: white
+Sandwich size: 8 inches
+Meat: bacon
+Cheese: provolone
+Vegetables: lettuce, tomatoes, onions
+Sauce: mayo, ketchup
+Sides: sauce
+Toasted: true
+Price....................$12.0Bread: rye
+Sandwich size: 4 inches
+Meat: salami
+Cheese: american
+Vegetables: lettuce, peppers, cucumbers
+Sauce: vinaigrette
+Sides: sauce
+Toasted: false
+Price....................$7.25Bread: white
+Sandwich size: 4 inches
+Meat: bacon
+Cheese: provolone, swiss
+Vegetables: peppers, onions
+Sauce: mayo
+Sides: sauce
+Toasted: true
+Price....................$8.3
+-✮--★--☆---Drinks---☆--★--✮-
+Drink: medium lemonade
+Price....................$2.5
+-✮--★--☆---Chips---☆--★--✮-
+Chips: bbq
+Price....................$1.5Chips: sea salt
+Price....................$1.5
+-✮--★--☆-Order Total-☆--★--✮-
+Your total today was $33.05
